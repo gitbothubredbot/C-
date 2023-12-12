@@ -1,0 +1,36 @@
+Read through the following functions and note how they are similar and how they differ. Then, answer the following questions.
+
+string maisie(string str) {
+    Stack<char> storage;
+    // Loop A
+    for (char ch: str) {
+        storage.push(ch);
+    }
+    // Loop B
+    string result;
+    while (!storage.isEmpty()) {
+        result += storage.pop();
+    }
+    return result;
+}
+string saki (string str) {
+    Vector<char> storage;
+    // Loop C
+    for (char ch: str) {
+        storage.add(ch);
+    }
+    // Loop D
+    string result;
+    while (!storage.isEmpty()) {
+        result += storage[0];
+        storage.remove(0);
+    }
+    return result;
+}
+First, we will examine how each of these functions work.
+In one sentence, explain what the loop labeled Loop A accomplishes.
+In one sentence, explain what the loop labeled Loop B accomplishes.
+In one sentence, explain what the loop labeled Loop C accomplishes.
+In one sentence, explain what the loop labeled Loop D accomplishes.
+Now, let's put it all together: what is returned as a result of the function call maisie("buster")? What is returned as a result of the function call saki("buster")?
+What is the Big O of each function with respect to n where n is the length of the string str?
