@@ -1,0 +1,26 @@
+or this problem, you are writing code to help staff campus jobs.
+
+A student who wishes to be considered submits a resume of their skills to the campus resume book. A resume is stored as a Set<string> which each skill is represented as a string, e.g. "marketing" or "construction". The resume book is of type Map<string, Set<string>>. This map associates a person's name (key) with their resume (value).
+
+Here is an example campus resume book:
+
+"Elmo"   ->  { "tickling", "giggling" }
+"Kermit" ->  { "juggling", "singing", "problem solving" }
+"Zoe"    ->  { "drumming", "counting" }
+"Snuffy" ->  { "sleeping" }
+The hiring manager identifies a set of desired skills for a team. Interested candidates submit their resume to the campus resume book and add their names to the applicant queue. You will write code to review the resumes of the applicants in the queue and choose which students to hire for the team.
+
+Here are the steps to build a team (make sure to follow these steps when implementing the function!):
+
+Start with an empty team
+Consider each applicant in order that the application was received
+If the applicant has something to offer (that is, applicant's resume has skills that are desired and currently lacking in your team), add to the team
+Hint: The higher-level set operations will be handy here
+Continue until the team contains all desired skills or you run out of applicants
+Note that this approach does not find the smallest team – instead it gives preference to earlier applicants and may build a larger team than optimal. This is totally fine and as expected. You are not searching for the optimally smallest team, you are to exactly follow the team-building algorithm as described above.
+
+Write the function buildTeam. The three arguments to the function are the set of desired skills for the team, the queue of applicant names, and the campus resume book. The function returns a vector of names to hire for the team, chosen using the process outlined above.
+
+Vector<string> buildTeam(Set<string>& desired, 
+                          Queue<string> applicants, 
+                          Map<string, Set<string>>& resumeBook)
