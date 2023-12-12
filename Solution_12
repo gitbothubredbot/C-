@@ -1,0 +1,6 @@
+Loop A adds each character in the original string to the Stack from the beginning of the string to the end of the string.
+Loop B puts each character that was in the original string str (from end to beginning) into the result string since it’s popping the letters off the stack.
+Loop C adds each character in the original string to the Vector from the beginning of the string to the end of the string.
+Loop D puts each character that was in the original string str (from beginning to end) into the result string by taking the first element in the storage Vector each time and then removing it.
+maisie("buster") = "retsub" and saki("buster") = "buster"
+First function is O(n) and second function is O(n^2).
