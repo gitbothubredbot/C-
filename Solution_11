@@ -1,0 +1,15 @@
+Vector<string> buildTeam(Set<string>& desired, 
+                         Queue<string> applicants, 
+                         Map<string, Set<string>>& resumeBook) {
+ 
+    Vector<string> team;
+    while (!applicants.isEmpty() && !desired.isEmpty()) {
+         string curApplicant = applicants.dequeue();
+         Set<string> neededSkills = resumeBook[curApplicant] * desired;
+         if (!neededSkills.isEmpty()){
+            team.add(curApplicant);
+            desired -= neededSkills;
+        }
+    }
+    return team;
+}
